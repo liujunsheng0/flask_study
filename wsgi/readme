@@ -1,0 +1,5 @@
+代码阅读顺序:
+三个文件实现了相同的功能, 不过实现方式不同
+1. no_wsgi         无wsgi时, 处理http请求
+2. implement_wsgi  简单实现了个wsgi
+3. app.py          使用wsgi库

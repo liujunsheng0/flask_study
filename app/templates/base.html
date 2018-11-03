@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+    <h1>flask study</h1>
+    <ul>
+        <!-- g,url_for build-in in template-->
+        {% if g.user %}
+            <li><span>{{ g.user['username'] }}</span>
+            <li><span> logout_url </span></li>
+        {% else %}
+            <li><span> login_url </span></li>
+        {% endif %}
+    </ul>
+</nav>
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+
+    {% block content %}{% endblock %}
+</section>
