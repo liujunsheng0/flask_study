@@ -9,3 +9,5 @@ main = Blueprint('main', __name__)
 
 from . import errors
 from . import views
+from . import download_upload
+from . import variate

@@ -25,6 +25,7 @@ class OnlineConfig(Config):
 
 _config = {'test': TestConfig, 'develop': DevConfig, 'online': OnlineConfig, 'dev': DevConfig}
 
+
 def get_config():
     mode = os.environ.get('MODE', '').lower()
     config = _config.get(mode, DevConfig)
