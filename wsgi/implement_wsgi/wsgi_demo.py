@@ -8,6 +8,7 @@ from socket import socket, AF_INET, SOCK_STREAM
 from copy import deepcopy
 from threading import Thread
 
+
 data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data')
 
 
@@ -77,6 +78,7 @@ class WSGI(object):
             Thread(target=self._handler, args=(client, )).run()
 
     def start_response(self, status, response_headers, exc_info=None):
+        _ = exc_info
         response_header = "HTTP/1.1 " + status + "\r\n"
         for header in response_headers:
             response_header += "%s:%s\r\n" % header

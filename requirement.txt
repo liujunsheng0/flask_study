@@ -1,3 +1,4 @@
 flask
 flask_script
 eventlet
+redis

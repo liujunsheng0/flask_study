@@ -65,7 +65,7 @@ def read_file(path):
 
 def app(environ: dict, start_response):
     """
-    直接使用库 WSGI
+    直接使用库 WSGI, web 应用
     """
     start_response('200 OK', [('Content-Type', 'text/plain')])
 
